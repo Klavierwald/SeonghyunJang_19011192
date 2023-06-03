@@ -4,8 +4,8 @@
 function el = elevation(ENU, el_mask)
     % input: ENU, nx3 with ENU position in km / el_mask, masking angle in deg
     % output: el, 1xn elevation angle in deg (masked)
-    % ECEF_local: ENU from GMST + UTC, ECEF_local = R_UTC'*ECEF
-    % ENU: East-North-Up Coordinate at Ground Station
+    % ECEF: ECEF is from UTC + LT time stamp, ECEF = R_LT'
+    % ENU: ENU from ECEF, East-North-Up Coordinate at Ground Station (g_lat, g_long, g_h)
     
     el = asin(ENU(:,3)./sqrt(ENU(:,1).^2+ENU(:,2).^2+ENU(:,3).^2));
 
