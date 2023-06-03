@@ -4,8 +4,8 @@
 function az = azimuth(ENU)
     % input: ENU, nx3 with ENU position in km
     % output: az, 1xn azimuth angle in deg
-    % ECEF_local: ENU from GMST + UTC, ECEF_local = R_UTC'*ECEF
-    % ENU: East-North-Up Coordinate at Ground Station
+    % ECEF: ECEF is from UTC + LT time stamp, ECEF = R_LT'
+    % ENU: ENU from ECEF, East-North-Up Coordinate at Ground Station (g_lat, g_long, g_h)
     
     az = atan2(ENU(:,1), ENU(:,2));
 
